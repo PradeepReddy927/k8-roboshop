@@ -26,18 +26,18 @@ spec:
     spec: 
       containers: 
       - name: rabbitmq
-        image: pradeepreddy90/rabbitmq:v1
+        image: rabbitmq:3
         imagePullPolicy: Always 
         readinessProbe:
           tcpSocket:
-            port: 27017
-          initialDelaySeconds: 10
-          periodSeconds: 5
+            port: 5672
+          initialDelaySeconds: 20
+          periodSeconds: 10
         livenessProbe:
             tcpSocket:
-              port: 27017
-            initialDelaySeconds: 10
-            periodSeconds: 5
+              port: 5672
+            initialDelaySeconds: 20
+            periodSeconds: 10
 ---
 apiVersion: v1
 kind: Service
@@ -51,6 +51,6 @@ spec:
    tier: db
   ports: 
     - protocol: TCP
-      port: 27017 # service Port
-      targetPort: 27017  # Container Port
+      port: 5672 # service Port
+      targetPort: 5672  # Container Port
         
