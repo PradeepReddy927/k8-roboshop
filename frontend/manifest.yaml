@@ -115,7 +115,7 @@ spec:
         volumeMounts:
         - name: nginx-config
           mountPath: /etc/nginx/nginx.conf
-          subPath:  nginx.conf
+          subPath: nginx.conf
 
       volumes:
        - name: nginx-config
@@ -137,5 +137,5 @@ spec:
   ports: 
     - protocol: TCP
       port: 80 # service Port
-      targetPort: 80  # Container Port
+      targetPort: 8080 # Container Port
         
