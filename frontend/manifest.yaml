@@ -96,7 +96,7 @@ spec:
       containers: 
       - name: frontend
         image: pradeepreddy90/frontend:v1
-   
+        imagePullPolicy: Always
         ports:
         - name: liveness-port
           containerPort: 8080
